@@ -157,12 +157,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
         startConfetti();
 
-        // Redirección a WhatsApp
+        // Redirección a WhatsApp (Compatible con iOS y Android)
         const phoneNumber = "50256155387"; // Número de Guatemala actualizado
         const message = encodeURIComponent("¡Hola! Confirmo mi asistencia a la boda. ¡Nos vemos pronto! 🎉💍");
-        setTimeout(() => {
-            window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
-        }, 1500); // Esperamos un poco para que vea el confeti
+        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+        
+        // Detectar si es iOS
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        
+        // Función para abrir WhatsApp de forma compatible
+        function openWhatsApp() {
+            // Crear un enlace temporal y hacer click (funciona mejor en iOS)
+            const link = document.createElement('a');
+            link.href = whatsappUrl;
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+        
+        // En iOS usar timeout más corto para mantener contexto del evento
+        // En Android podemos esperar más para ver el confeti
+        const delay = isIOS ? 500 : 1500;
+        setTimeout(openWhatsApp, delay);
     }
 
     declineBtn.onclick = () => {
