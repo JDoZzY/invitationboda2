@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestra Boda - Invitación</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="envelope-wrapper">
+        <div class="envelope-part top">
+            <div class="envelope-content">
+                <p class="envelope-title">Nuestra Boda</p>
+                <img src="assets/flores.png" class="envelope-flowers" alt="">
+            </div>
+        </div>
+        <div class="envelope-part bottom"></div>
+        <div class="scroll-hint">
+            <span>Toca para abrir</span>
+            <div class="arrow">↓</div>
+        </div>
+    </div>
+
+    <div class="gradient-bg"></div>
+    <div class="overlay"></div>
+
+    <!-- Floral Decorations -->
+    <!-- Removed corner flowers as requested -->
+
+
+
+    <main class="container">
+        <header class="hero fade-in">
+            <p class="blessing-phrase">"Porque creemos en el diseño original de Dios. Nos amamos y anhelamos seguir
+                formando una familia para toda la vida. Bajo la bendición de Dios."</p>
+            <p class="eyebrow">Nos casamos</p>
+            <h1 class="title">Nuestra Boda<br><img src="assets/logo.png" class="wedding-logo" alt="J y E"></h1>
+            <p class="subtitle">El inicio de nuestro "para siempre".</p>
+        </header>
+
+        <section class="details scroll-reveal">
+            <div class="card glass">
+                <div class="detail-item">
+                    <div class="calendar-icon-styled">
+                        <span class="month">ENE</span>
+                        <span class="day">24</span>
+                    </div>
+                    <h3>CUÁNDO</h3>
+                    <p>Sábado, 24 de Enero</p>
+                    <p class="small">2026</p>
+                </div>
+                <div class="detail-item">
+                    <span class="icon">💒</span>
+                    <h3>CEREMONIA</h3>
+                    <p>5:00 PM</p>
+                    <p class="small">Civil y Religiosa</p>
+                </div>
+                <div class="detail-item">
+                    <span class="icon">🥂</span>
+                    <h3>RECEPCIÓN</h3>
+                    <p>6:30 PM</p>
+                    <p class="small">Villa Elizabeth, Zacapa</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="location-section" class="location scroll-reveal">
+            <div class="card glass">
+                <span class="icon">📍</span>
+                <h3>UBICACIÓN</h3>
+                <p class="location-name">Villa Elizabeth</p>
+                <p class="address">Zacapa, Guatemala</p>
+                <a href="https://maps.google.com" target="_blank" class="map-btn">Ver Mapa</a>
+            </div>
+        </section>
+
+        <section class="countdown-section scroll-reveal">
+            <h2>Faltan</h2>
+            <div id="countdown" class="countdown-container">
+                <div class="time-unit">
+                    <span id="days">00</span>
+                    <label>Días</label>
+                </div>
+                <div class="time-unit">
+                    <span id="hours">00</span>
+                    <label>Hrs</label>
+                </div>
+                <div class="time-unit">
+                    <span id="minutes">00</span>
+                    <label>Min</label>
+                </div>
+                <div class="time-unit">
+                    <span id="seconds">00</span>
+                    <label>Seg</label>
+                </div>
+            </div>
+            <div class="calendar-links">
+                <a href="#" class="calendar-btn" id="googleCal">Agendar en Google Calendar</a>
+            </div>
+        </section>
+
+        <section class="gallery scroll-reveal">
+            <h2>Nuestra Historia</h2>
+            <div class="masonry-grid">
+                <div class="grid-item solo"><img src="assets/2.jfif" alt="Nuestra Historia"></div>
+            </div>
+        </section>
+
+        <section class="dress-code scroll-reveal">
+            <div class="card glass">
+                <span class="icon">👔</span>
+                <h3>CÓDIGO DE VESTIMENTA</h3>
+                <img src="assets/vestimenta.png" class="dress-code-img" alt="Código de vestimenta">
+                <p class="dress-code-text">Formal y Semi formal</p>
+            </div>
+        </section>
+
+        <section class="gift-section scroll-reveal">
+            <div class="card glass">
+                <span class="icon">🎁</span>
+                <h3>LLUVIA DE SOBRES</h3>
+                <img src="assets/sobre.png" class="gift-img" alt="Lluvia de sobres">
+                <p class="gift-text">"Nuestro mejor regalo es tu presencia, pero si tu deseo es tener un detalle con
+                    nosotros puedes hacerlo dentro de un sobre"</p>
+            </div>
+        </section>
+
+        <section class="rsvp scroll-reveal">
+            <p class="sentimental-phrase">Porque eres una persona importante en nuestras vidas queremos que formes parte
+                de este momento tan especial para nosotros</p>
+            <p class="deadline">Favor de confirmar antes del 15 de Enero</p>
+            <button id="rsvpBtn" class="cta-button">Confirmar Asistencia</button>
+        </section>
+
+        <footer class="footer">
+            <p>Gracias por ser parte de este momento inolvidable<br>¡Te esperamos!</p>
+        </footer>
+    </main>
+
+    <!-- Modal -->
+    <div id="rsvpModal" class="modal">
+        <div class="modal-content glass">
+            <span class="close">&times;</span>
+            <h2>¿Vienes a la fiesta?</h2>
+            <p>Favor de confirmar antes del 15 de Enero</p>
+            <p>No sería lo mismo sin ti.</p>
+            <div class="modal-actions">
+                <button id="confirmBtn" class="btn primary" style="background-image: url('assets/fondo.png');">¡Obvio
+                    que sí!</button>
+                <button id="declineBtn" class="btn secondary">No puedo ir :(</button>
+            </div>
+        </div>
+    </div>
+
+    <canvas id="confettiCanvas"></canvas>
+
+    <!-- Audio Control -->
+    <div id="music-control" class="music-btn">
+        <span class="music-icon">🎵</span>
+        <audio id="bgMusic" loop preload="auto">
+            <source src="assets/pactocondios.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
